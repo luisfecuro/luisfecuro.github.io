@@ -170,26 +170,50 @@ button:focus-visible {
   font-weight: 600;
 }
 
-/* ===== Skills word cloud ===== */
-.word-cloud {
+/* ===== Skills grid (2 columns) ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+}
+
+.skill-group-wide {
+  grid-column: 1 / -1;
+}
+
+.skill-group h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--copper);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 14px;
+}
+
+.skill-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 12px 20px;
+  gap: 8px 10px;
   padding: 0;
   margin: 0;
-  font-family: var(--font-display);
 }
 
-.word-cloud li {
-  color: var(--cream-dim);
+.skill-list li {
+  font-size: 0.9rem;
+  color: var(--cream);
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--wood-panel);
 }
 
-.word-cloud .w-sm { font-size: 1rem; font-weight: 500; }
-.word-cloud .w-md { font-size: 1.3rem; font-weight: 700; color: var(--cream); }
-.word-cloud .w-lg { font-size: 1.8rem; font-weight: 900; color: var(--copper); }
-.word-cloud .w-xl { font-size: 2.4rem; font-weight: 900; color: var(--cream); }
+@media (max-width: 560px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ===== Contact ===== */
 .contact {
